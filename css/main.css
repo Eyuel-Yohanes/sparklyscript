@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root{
+    --bg-color: #323437;
+    --text-color: #646669;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.25rem;
+    color: #d1d0c5;
+    background: var(--bg-color);
+    
+}
+
+.top {
+    padding: 20px;
+    min-width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(-3rem);
+    animation: fadeInUp 2s ease forwards;
+    
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    background-color: transparent;
+    width: min-content;
+    max-width: 300rem;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+
+.lang a {
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+h1 {
+    color: #646669;
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    font-family: 'Source Code Pro', monospace;
+    position: relative;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before {
+    background: var(--bg-color);
+    animation: autotext 4s steps(13) 2s forwards infinite;
+}
+
+h1::after {
+    width: 0.125em;
+    background: #646669;
+    animation: autotext 4s steps(13) 2s forwards infinite, 
+                blink 750ms steps(13) infinite;
+
+}
+
+@keyframes autotext {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}

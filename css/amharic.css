@@ -1,0 +1,13 @@
+
+h1::before {
+    background: var(--bg-color);
+    animation: autotext 4s steps(15) 2s forwards infinite;
+}
+
+h1::after {
+    width: 0.125em;
+    background: #646669;
+    animation: autotext 4s steps(15) 2s forwards infinite, 
+                blink 750ms steps(15) infinite;
+
+}
